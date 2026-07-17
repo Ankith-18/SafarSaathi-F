@@ -1,26 +1,39 @@
+import featuresData from "../../data/featuresData";
+import FeatureCard from "./FeatureCard";
+
 function Features() {
   return (
-    <section>
-      <h2>Features</h2>
+    <section
+      id="features"
+      className="bg-black py-24 px-6"
+    >
+      <div className="max-w-7xl mx-auto">
 
-      <div>
-        <h3>AI Travel Assistant</h3>
-        <p>Get smart travel suggestions.</p>
-      </div>
+        <h2 className="text-5xl font-bold text-center text-white">
+          Why Choose
+          <span className="text-blue-500">
+            {" "}SafarSaathi?
+          </span>
+        </h2>
 
-      <div>
-        <h3>Smart Companion Matching</h3>
-        <p>Find people with similar interests.</p>
-      </div>
+        <p className="text-gray-400 text-center mt-5 max-w-2xl mx-auto">
+          Everything you need to plan,
+          organize and enjoy unforgettable journeys.
+        </p>
 
-      <div>
-        <h3>Trip Planning</h3>
-        <p>Plan your complete journey.</p>
-      </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
 
-      <div>
-        <h3>Personalized Recommendations</h3>
-        <p>Recommendations based on your preferences.</p>
+          {featuresData.map((feature) => (
+            <FeatureCard
+              key={feature.id}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
+
+        </div>
+
       </div>
     </section>
   );
